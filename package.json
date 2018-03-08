@@ -6,8 +6,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
-    "test": "ng test",
-    "lint": "ng lint",
+    "test": "./node_modules/.bin/ng test",
+    "lint": "./node_modules/.bin/ng lint",
     "e2e": "ng e2e"
   },
   "private": true,
