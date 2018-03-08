@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Angular 5 Sandbox';
+  username = 'Srini';
+
+  onSubmit(formVal) {
+    console.log(formVal);
+  }
 }
