@@ -6,33 +6,32 @@
 
 <form #formRef="ngForm"
   (ngSubmit)="onSubmit(formRef.value)">
-  <input name="username"
-    type="text"
-    [(ngModel)]="username">
-  {{username}}
 
-  <br>
-
-  <input name="password"
-    type="text"
-    [(ngModel)]="password"
-    #passwordRef="ngModel"
-    required
-    minlength="3">
-
-  <br>
-
-  <div *ngIf="passwordRef.errors?.required">Password is required.</div>
-  <div *ngIf="passwordRef.errors?.minlength">
-    Min length is {{passwordRef.errors?.minlength.requiredLength}}.
-    You only typed {{passwordRef.errors?.minlength.actualLength}}.
-  </div>
-
-  <br>
-
-  <div *ngIf="passwordRef.errors">
-  {{passwordRef.errors | json}}
-  </div>
+  <fieldset ngModelGroup="login">
+    <input name="username"
+      required
+      type="text"
+      [(ngModel)]="username"
+      #usernameRef="ngModel">
+    {{username}}
+    <br>
+    <input name="password"
+      type="password"
+      [(ngModel)]="password"
+      #passwordRef="ngModel"
+      required
+      minlength="3">
+    <br>
+    <div *ngIf="passwordRef.errors?.required">Password is required.</div>
+    <div *ngIf="passwordRef.errors?.minlength">
+      Min length is {{passwordRef.errors?.minlength.requiredLength}}.
+      You only typed {{passwordRef.errors?.minlength.actualLength}}.
+    </div>
+    <br>
+    <div *ngIf="passwordRef.errors">
+    {{passwordRef.errors | json}}
+    </div>
+  </fieldset>
 
   <button type="submit">submit</button>
 </form>
@@ -42,4 +41,11 @@
   {{formRef.value | json}}
   <br>
   {{formRef.valid}}
+  <hr>
+  <h4>username</h4>
+  untouched: {{usernameRef.untouched}}<br>
+  touched: {{usernameRef.touched}}<br>
+  pristine: {{usernameRef.pristine}}<br>
+  dirty: {{usernameRef.dirty}}<br>
+  <hr>
 </div>

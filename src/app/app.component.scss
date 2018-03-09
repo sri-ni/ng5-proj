@@ -1,0 +1,9 @@
+input {
+  &.ng-invalid {
+    border: 2px solid darkorange;
+  }
+
+  &.ng-valid {
+    border: 2px solid seagreen;
+  }
+}
