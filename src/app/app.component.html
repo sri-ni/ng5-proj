@@ -8,6 +8,15 @@
   (ngSubmit)="onSubmit(formRef.value)">
 
   <fieldset ngModelGroup="login">
+    <div *ngFor="let location of locations">
+      <input required
+             [attr.id]="location"
+             name="loca"
+             ngModel
+             [value]="location"
+             type="radio">
+      <label [attr.for]="location">{{location}}</label>
+    </div>
     <input name="username"
       required
       type="text"

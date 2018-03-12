@@ -3,6 +3,10 @@ input {
     border: 2px solid darkorange;
   }
 
+  &.ng-invalid + label {
+    border: 2px solid coral;
+  }
+
   &.ng-valid {
     border: 2px solid seagreen;
   }

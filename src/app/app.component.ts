@@ -14,6 +14,7 @@ export class AppComponent {
 
   title = 'Angular 5 Sandbox';
   username = 'Srini';
+  locations = ['Home', 'Away', 'Ocean', 'Space', 'Stars'];
 
   onSubmit(formVal) {
     console.log(formVal);
