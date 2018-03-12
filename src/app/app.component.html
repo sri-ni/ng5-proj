@@ -17,6 +17,15 @@
              type="radio">
       <label [attr.for]="location">{{location}}</label>
     </div>
+    <br>
+    <select name="locaSel"
+            [ngModel]="locations[0]">
+      <option *ngFor="let location of locations"
+        [value]="location">
+        {{location}}
+      </option>
+    </select>
+    <br>
     <input name="username"
       required
       type="text"
