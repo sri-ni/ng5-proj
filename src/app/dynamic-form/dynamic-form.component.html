@@ -2,9 +2,10 @@
   Dynamic Forms
 </h2>
 
-
 <form [formGroup]="form">
-  <input type="text" [formControlName]="fieldName">
+  <div *ngFor="let prop of personProps">
+    <input type="text" [formControlName]="prop">
+  </div>
 </form>
 <pre>
   {{form.value | json}}
